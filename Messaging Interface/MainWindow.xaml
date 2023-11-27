@@ -3,10 +3,58 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Messaging_Interface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" WindowState="Maximized">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- Search Bar -->
+        <TextBox Grid.Column="0" VerticalAlignment="Top" Margin="10" Width="180"/>
+
+        <!-- Conversation List -->
+        <ListBox Name="ConversationListBox" Grid.Column="0" VerticalAlignment="Top" Margin="10,40,0,10">
+            <!-- Example Conversation Item -->
+            <ListBoxItem>Friend 1</ListBoxItem>
+            <ListBoxItem>Friend 2</ListBoxItem>
+            <ListBoxItem>Friend 2</ListBoxItem>
+            <!-- Add more items dynamically or bind to a collection in your code-behind -->
+        </ListBox>
+
+        <!-- Conversation Window -->
+        <ListView Name="MessageListView" Grid.Column="1" Margin="10,10,10,60">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Sender" Width="250"/>
+                    <GridViewColumn Header="Message" Width="250"/>
+                </GridView>
+            </ListView.View>
+            <!-- Example Message Item -->
+            <ListViewItem>
+                <ListViewItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="Friend 1"/>
+                        <TextBlock Text="Hello!"/>
+                    </StackPanel>
+                </ListViewItem.Content>
+            </ListViewItem>
+            <!-- Add more items dynamically or bind to a collection in your code-behind -->
+        </ListView>
+
+        <!-- Message Input Box and Send Button -->
+        <Grid Grid.Column="1" VerticalAlignment="Bottom" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Message Input Box -->
+            <TextBox Name="MessageTextBox" Grid.Row="0" Height="20"/>
+            
+            <!-- Send Button -->
+            <Button Content="Send" Grid.Row="1" Width="75" Height="20" Margin="0,5,0,0"/>
+        </Grid>
     </Grid>
 </Window>
