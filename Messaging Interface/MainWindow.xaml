@@ -7,54 +7,51 @@
         Title="MainWindow" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.18*"/>
+            <ColumnDefinition Width="0.82*"/>
         </Grid.ColumnDefinitions>
+        
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-        <!-- Search Bar -->
-        <TextBox Grid.Column="0" VerticalAlignment="Top" Margin="10" Width="180"/>
-
-        <!-- Conversation List -->
-        <ListBox Name="ConversationListBox" Grid.Column="0" VerticalAlignment="Top" Margin="10,40,0,10">
-            <!-- Example Conversation Item -->
-            <ListBoxItem>Friend 1</ListBoxItem>
-            <ListBoxItem>Friend 2</ListBoxItem>
-            <ListBoxItem>Friend 2</ListBoxItem>
-            <!-- Add more items dynamically or bind to a collection in your code-behind -->
-        </ListBox>
-
-        <!-- Conversation Window -->
-        <ListView Name="MessageListView" Grid.Column="1" Margin="10,10,10,60">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Sender" Width="250"/>
-                    <GridViewColumn Header="Message" Width="250"/>
-                </GridView>
-            </ListView.View>
-            <!-- Example Message Item -->
-            <ListViewItem>
-                <ListViewItem.Content>
-                    <StackPanel>
-                        <TextBlock Text="Friend 1"/>
-                        <TextBlock Text="Hello!"/>
-                    </StackPanel>
-                </ListViewItem.Content>
-            </ListViewItem>
-            <!-- Add more items dynamically or bind to a collection in your code-behind -->
-        </ListView>
-
-        <!-- Message Input Box and Send Button -->
-        <Grid Grid.Column="1" VerticalAlignment="Bottom" Margin="10">
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Chats"/>
+        <TextBox Grid.Column="0" Grid.Row="1" Text="Search"/>
+        
+        <ScrollViewer Grid.Column="0" Grid.Row="2" VerticalScrollBarVisibility="Auto">
+            <ListBox>
+                <ListBoxItem>Item 1</ListBoxItem>
+                <ListBoxItem>Item 2</ListBoxItem>
+                <ListBoxItem>Item 3</ListBoxItem>
+            </ListBox>
+        </ScrollViewer>
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="0.96*" />
+                <RowDefinition Height="0.04*" />
             </Grid.RowDefinitions>
 
-            <!-- Message Input Box -->
-            <TextBox Name="MessageTextBox" Grid.Row="0" Height="20"/>
-            
-            <!-- Send Button -->
-            <Button Content="Send" Grid.Row="1" Width="75" Height="20" Margin="0,5,0,0"/>
+            <TextBlock Grid.Row="0" Text="User's Name"></TextBlock>
+        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ListBox>
+                <ListBoxItem>Item 1</ListBoxItem>
+                <ListBoxItem>Item 2</ListBoxItem>
+                <ListBoxItem>Item 3</ListBoxItem>
+            </ListBox>
+        </ScrollViewer>
+            <TextBox
+                TextWrapping="Wrap"
+                AcceptsReturn="True"
+                VerticalScrollBarVisibility="Hidden"
+                Padding="10"
+                Grid.Row="2"></TextBox>
         </Grid>
     </Grid>
 </Window>
