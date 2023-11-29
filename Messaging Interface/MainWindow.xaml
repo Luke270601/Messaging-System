@@ -19,13 +19,10 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Column="0" Grid.Row="0" Text="Chats"/>
-        <TextBox Grid.Column="0" Grid.Row="1" Text="Search"/>
+        <TextBox Grid.Column="0" Grid.Row="1" Name="Search" Text="Search"/>
         
         <ScrollViewer Grid.Column="0" Grid.Row="2" VerticalScrollBarVisibility="Auto">
-            <ListBox>
-                <ListBoxItem>Item 1</ListBoxItem>
-                <ListBoxItem>Item 2</ListBoxItem>
-                <ListBoxItem>Item 3</ListBoxItem>
+            <ListBox Name="Conversations">
             </ListBox>
         </ScrollViewer>
         </Grid>
@@ -38,12 +35,9 @@
                 <RowDefinition Height="0.04*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="User's Name"></TextBlock>
+            <TextBlock Grid.Row="0" Text="User's Name" Name="Recipient"></TextBlock>
         <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <ListBox>
-                <ListBoxItem>Item 1</ListBoxItem>
-                <ListBoxItem>Item 2</ListBoxItem>
-                <ListBoxItem>Item 3</ListBoxItem>
+            <ListBox Name="Messages">
             </ListBox>
         </ScrollViewer>
             <TextBox
@@ -51,6 +45,7 @@
                 AcceptsReturn="True"
                 VerticalScrollBarVisibility="Hidden"
                 Padding="10"
+                Name="MessageInput"
                 Grid.Row="2"></TextBox>
         </Grid>
     </Grid>
