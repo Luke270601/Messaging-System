@@ -36,7 +36,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Text="User's Name" Name="Recipient"></TextBlock>
-        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Auto" FontStretch="Expanded" Name="Chat" >
                 <ListBox BorderThickness="0" Name="Messages"></ListBox>
         </ScrollViewer>
             <Button Grid.Row="0" Click="ButtonBase_OnClick">Receive Message</Button>
