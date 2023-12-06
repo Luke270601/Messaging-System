@@ -20,4 +20,18 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+
+
+    private void MessageInput_OnKeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key != Key.Return) return;
+        Messages.Items.Add("You: " + MessageInput.Text);
+        MessageInput.Clear();
+    }
+
+    private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+    {
+        Messages.Items.Add("Sender: New Message");
+    }
 }
