@@ -2,5 +2,7 @@
 
 public class User
 {
+    private int user_id;
+    private int username;
     
 }
