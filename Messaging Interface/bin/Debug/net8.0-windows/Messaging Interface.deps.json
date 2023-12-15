@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Messaging Interface/1.0.0": {
+        "runtime": {
+          "Messaging Interface.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Messaging Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
